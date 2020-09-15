@@ -1,10 +1,51 @@
-.App {
-  text-align: center;
+.login-container{
+  width: 70%;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.center-class{
+  margin-top: 5%;
+  text-align: center;
+  width: 100%;
+}
+
+.title-label-style{
+  color: #AE498C !important;
+  font-size:  1.5rem;
+  font-weight: bold;
+}
+
+.login-label-style{
+  color: #AE498C !important;
+  font-size:  1rem;
+  font-weight: bold;
+  align-self: center
+}
+.option-view{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+
+input[type = radio]{
+  margin-right: 5px;
+}
+.submit-button{
+  border-radius: 15px;
+  background-color: #AE498C;
+  border-color: #AE498C;
+  font-size:  1rem !important;
+}
+.error-label{
+  color: red !important;
+  font-size:  1rem;
+  font-weight: bold;
+  align-self: center
+}
+.form-control{
+  border-radius: 15px !important;
+  margin: 5px 0px;
+  width: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
