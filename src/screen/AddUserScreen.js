@@ -98,17 +98,17 @@ class AddUserScreen extends React.Component {
                             <LabelComponent labelName="Add User" labelStyle="title-label-style"></LabelComponent>
                         </div>
                         <form onSubmit={this.addUser}>
-                            <FormInputComponent label="Username" type="email" className="form-control" name="username" value={this.state.username} placeholder="Enter your email" onChangeFunction={this.handleChange} required={true} />
+                            <FormInputComponent label="Username" type="email" className="form-control" name="username" value={this.state.username} placeholder="Enter email" onChangeFunction={this.handleChange} required={true} />
 
-                            <FormInputComponent label="Password" type="password" className="form-control" name="password" value={this.state.password} placeholder="Enter your password" onChangeFunction={this.handleChange} required={true} />
+                            <FormInputComponent label="Password" type="password" className="form-control" name="password" value={this.state.password} placeholder="Enter password" onChangeFunction={this.handleChange} required={true} />
 
-                            <FormInputComponent label="Id" type="text" className="form-control" name="id" value={this.state.id} placeholder="Enter your ID" onChangeFunction={this.handleChange} required={true} />
+                            <FormInputComponent label="Id" type="text" className="form-control" name="id" value={this.state.id} placeholder="Enter ID" onChangeFunction={this.handleChange} required={true} />
 
-                            <FormInputComponent label="Name" type="text" className="form-control" name="name" value={this.state.name} placeholder="Enter your name" onChangeFunction={this.handleChange} required={true} />
+                            <FormInputComponent label="Name" type="text" className="form-control" name="name" value={this.state.name} placeholder="Enter name" onChangeFunction={this.handleChange} required={true} />
 
-                            <FormInputComponent label="Address" type="text" className="form-control" name="address" value={this.state.address} placeholder="Enter your address" onChangeFunction={this.handleChange} required={true} />
+                            <FormInputComponent label="Address" type="text" className="form-control" name="address" value={this.state.address} placeholder="Enter address" onChangeFunction={this.handleChange} required={true} />
 
-                            <FormInputComponent label="Phone No." type="tel" className="form-control" name="phoneNo" value={this.state.phoneNo} placeholder="Enter your phone number" onChangeFunction={this.handleChange} required={true} />
+                            <FormInputComponent label="Phone No." type="tel" className="form-control" name="phoneNo" value={this.state.phoneNo} placeholder="Enter phone number" onChangeFunction={this.handleChange} required={true} />
 
                             <div className="form-group">
                                 <SmallButtonComponent buttonName="Add User" className="submit-button btn btn-primary btn-block" />
