@@ -4,7 +4,6 @@ const initialState = {
   
   const reducer = (state = initialState, action) => {
     const newState = { ...state };
-    console.log(action)
     // eslint-disable-next-line default-case
     switch (action.type) {
       case "STORE_USER":

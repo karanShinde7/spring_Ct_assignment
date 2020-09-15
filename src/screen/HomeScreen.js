@@ -1,11 +1,9 @@
 import React from 'react';
 import LabelComponent from '../component/uiComponent/LabelComponent';
 import { connect } from "react-redux";
-import SmallButtonComponent from '../component/uiComponent/smallButtonComponent';
 import TabelRowComponent from '../component/uiComponent/tabelRowComponent';
 import { utilService } from '../service/utilService';
 
-let userList = []
 class HomeScreen extends React.Component {
 
     constructor(props) {
@@ -16,25 +14,25 @@ class HomeScreen extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({userList : []})
+        this.setState({ userList: [] })
         if (localStorage.getItem('userData')) {
             this.props.history.replace('/home/' + this.props.match.params.role)
             this.setState({ user_role: this.props.match.params.role })
         } else {
             this.props.history.replace('/')
         }
-        this.setState({userList : JSON.parse(localStorage.getItem('userList'))})
+        this.setState({ userList: JSON.parse(localStorage.getItem('userList')) })
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         // this.setState({userList : JSON.parse(localStorage.getItem('userList'))})
     }
 
-    goToAddUser(){
+    goToAddUser() {
         this.props.history.push('/new')
     }
 
-    logout(){
+    logout() {
         utilService.showConfirmationAlert('Logout', 'Do you want to logout?', 'warning', true, false).then((response) => {
             if (response) {
                 localStorage.removeItem('userData')
@@ -50,6 +48,8 @@ class HomeScreen extends React.Component {
                     <div className="col-sm-10 col-md-10 col-lg-10 mx-auto">
                         <div className="center-class">
                             <LabelComponent labelName="Home" labelStyle="title-label-style"></LabelComponent>
+                            <hr />
+                            <LabelComponent labelName="Users List" labelStyle="title-label-style"></LabelComponent>
                             <table className="table table-striped">
                                 <thead>
                                     <tr>
@@ -59,27 +59,25 @@ class HomeScreen extends React.Component {
                                         <th scope="col">Address</th>
                                     </tr>
                                 </thead>
-                                {this.state.userList && this.state.userList.length > 0
-                                    ? <tbody>
-                                        {this.state.userList.map((user) => {
-                                            return <TabelRowComponent user={user.user} />
+                                {this.state.userList && this.state.userList.length > 0 &&
+                                    <tbody>
+                                        {this.state.userList.map((user, index) => {
+                                            return <TabelRowComponent key={index} user={user.user} />
                                         })}
                                     </tbody>
-                                    :
-                                    <tbody><LabelComponent labelName="No Data" labelStyle="login-label-style"></LabelComponent></tbody>
                                 }
                             </table>
                             {this.props.match.params.role === "1"
-                                ?   <button className="submit-button btn btn-primary btn-block" onClick={() => {
+                                ? <button className="submit-button btn btn-primary btn-block" onClick={() => {
                                     this.goToAddUser()
                                 }}>
-                                        <h4>Add User</h4>
-                                    </button>
+                                    <h4>Add User</h4>
+                                </button>
                                 : <></>
                             }
                             <button className="submit-button btn btn-primary btn-block" onClick={() => {
-                                    this.logout()
-                                }}>
+                                this.logout()
+                            }}>
                                 <h4>Logout</h4>
                             </button>
                         </div>
